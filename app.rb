@@ -25,8 +25,15 @@ get '/' do
   
 end
 
+=begin
 get '/movie/*' do | n |
-  erb 'movie_'+ n
+  page='movie_'+ n
+  erb :page
+end
+=end
+
+get '/movie/1' do 
+  erb :movie_1
 end
 
 get '/login/form' do
