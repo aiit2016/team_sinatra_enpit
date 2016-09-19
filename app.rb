@@ -27,7 +27,6 @@ end
 
 get '/movie/*' do | n |
   erb 'movie_'+ n
-  # erb :page
 end
 
 get '/login/form' do
