@@ -22,6 +22,7 @@ end
 
 get '/' do
   erb 'Can you handle a <a href="/secure/place">secret</a>?'
+  erb :top
 end
 
 get '/login/form' do
