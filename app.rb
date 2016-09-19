@@ -40,6 +40,10 @@ get '/movie/2' do
   erb :movie_2
 end
 
+get '/movie/3' do
+  erb :movie_3
+end
+
 get '/login/form' do
   erb :login_form
 end
