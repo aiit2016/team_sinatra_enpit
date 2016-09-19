@@ -21,7 +21,12 @@ before '/secure/*' do
 end
 
 get '/' do
-  erb 'Can you handle a <a href="/secure/place">secret</a>?'
+  #erb 'Can you handle a <a href="/secure/place">secret</a>?'
+  
+end
+
+get '/movie/*' do | n |
+  erb 'movie_'+ n
 end
 
 get '/login/form' do
