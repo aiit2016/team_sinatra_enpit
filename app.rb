@@ -21,8 +21,7 @@ before '/secure/*' do
 end
 
 get '/' do
-  #erb 'Can you handle a <a href="/secure/place">secret</a>?'
-  
+  erb 'Can you handle a <a href="/secure/place">secret</a>?'
 end
 
 get '/movie/*' do | n |
@@ -48,8 +47,16 @@ get '/secure/place' do
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
 end
 
-# moive
-get '/movie/1' do
-  erb :movie_1
+# comment
+before '/comment/*' do
+  unless session[:identity]
+    session[:previous_url] = request.path
+    @error = 'Sorry, you need to be logged in to visit ' + request.path
+    halt erb(:login_form)
+  end
+end
+
+get '/comment/x' do
+  erb :comment_x
 end
 
